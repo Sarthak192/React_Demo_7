@@ -10,7 +10,7 @@ class Cockpit extends Component{
 
   static getDerivedStateFromProps(props, state) {
     console.log('[Cockpit.js] getDerivedStateFromProps', props);
-    return null
+    return null;
   }
 
   componentDidMount() {
@@ -26,16 +26,16 @@ class Cockpit extends Component{
     }
 
     if ( this.props.persons.length <= 2 ) {
-      assignedClasses.push( classes.red );
+      assignedClasses.push( classes.red ); // classes = ['red']
     }
     if ( this.props.persons.length <= 1 ) {
-      assignedClasses.push( classes.bold );
+      assignedClasses.push( classes.bold ); // classes = ['red', 'bold']
     }
 
     return (
         <div className={classes.Cockpit}>
             <h1>{this.props.title}</h1>
-            <p className={assignedClasses.join( ' ' )}>This is really working and it is very great!</p>
+            <p className={assignedClasses.join( ' ' )}>This is really working!</p>
             <button
                 className={btnClass}
                 onClick={this.props.clicked}>Toggle Persons</button>
